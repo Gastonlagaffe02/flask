@@ -4,3 +4,4 @@ timm
 Pillow
 torchvision
 gdown
+gunicorn
