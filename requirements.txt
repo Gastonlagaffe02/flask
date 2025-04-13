@@ -3,3 +3,4 @@ torch
 timm
 Pillow
 torchvision
+gdown
