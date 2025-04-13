@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Disease Detection Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .result-container {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .healthy {
+            color: green;
+        }
+        .sick {
+            color: red;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fish Disease Detection Result</h1>
+    
+    <div class="result-container">
+        {% if prediction.startswith('Healthy') %}
+        <h2 class="healthy">{{ prediction }}</h2>
+        <p>Your fish appears to be healthy!</p>
+        {% else %}
+        <h2 class="sick">{{ prediction }}</h2>
+        <p>Your fish appears to be sick. Please consult with a fish health specialist.</p>
+        {% endif %}
+    </div>
+    
+    <img src="{{ url_for('static', filename='uploads/' + image_path.split('/')[-1]) }}" alt="Uploaded Fish Image">
+    
+    <div>
+        <a href="/" class="back-button">Analyze Another Image</a>
+    </div>
+</body>
+</html>
