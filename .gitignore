@@ -1,0 +1,9 @@
+*.pth
+*.pt
+*.pkl
+*.h5
+*.sqlite3
+__pycache__/
+venv/
+*.zip
+static/uploads/

@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: fish-predictor
+    env: python
+    buildCommand: ""
+    startCommand: "python api.py"
